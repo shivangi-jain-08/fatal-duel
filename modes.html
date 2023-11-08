@@ -8,18 +8,19 @@
     <link rel="stylesheet" href="./src/instructions.css">
 </head>
 <body>
-    <div class="main-container">
-        <h2 id="title">MODES</h2>
-        <div id="controls-content">
-            <p class="control_player-text">Player 1</p>
-            <p class="control_player-text">Player 2</p>
+    <div class="main-container" style="padding: 50px 0;">
+        <h2 id="title">ENTER DETAILS</h2>
+        <div id="controls-content" >
+            <p class="name_player-text">Player 1</p>
+            <label for="player1-name" id="label-player1">Enter Name</label>
+            <input type="text" id="player1-name" name="player1-name" placeholder="Enter Player 1 Name">
+            <p class="name_player-text">Player 2</p>
+            <label for="player2-name" id="label-player2">Enter Name</label>
+            <input type="text" id="player2-name" name="player2-name" placeholder="Enter Player 2 Name">
         </div>
-        <p id="click-text">Click Anywhere to Continue</p>
+        <button id="save-button">Submit</button>
     </div>
-    <div id="skip-button">
-        <p id="skip">Skip to Game  >></p>
-    </div>
-
+    
     <script src="./src/instructions.js"></script>
 </body>
 </html>

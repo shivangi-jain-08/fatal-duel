@@ -17,6 +17,7 @@ body{
     background-size: 100% 100%;
     padding: 10vh 30vh;
     font-family: pixelFont;
+    color: white;
 }
 
 .main-container{
@@ -82,6 +83,61 @@ p{
     
 }
 
+#controls-content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .control_player-text{
-    width: 100%1;
+    width: 100%;
+}
+
+#player-1-controls{
+    /* background: url(../assets/player1/player1-controls.png); */
+    height: 200px;
+    /* background-size: contain; */
+}
+
+#player-2-controls{
+    height: 200px;
+}
+
+.name_player-text{
+    margin-top: 30px;
+}
+
+label{
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+input{
+    border: none;
+    outline: none;
+    padding: 10px;
+    color: black;
+    border-radius: 5px;
+    text-align: center;
+    width: 300px;
+    font-size: 22px;
+    font-family: "pixelFont";
+}
+
+input::placeholder{
+    color: gray;
+}
+
+#save-button{
+    border: none;
+    border-radius: 13px;
+    font-family: 'pixelFont';
+    font-size: 32px;
+    padding: 8px 16px;
+    background: #C8EACE;
+    box-shadow: 0px 0px 0px 2px rgba(3,85,72,1),
+    5px 5px 0px 0px rgba(3,85,72,1);
+    margin-top: 50px;
 }

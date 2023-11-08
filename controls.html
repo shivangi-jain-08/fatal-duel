@@ -7,18 +7,24 @@
     <link rel="icon" href="./assets/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="./src/instructions.css">
 </head>
-<body>
+<body style="padding: 6vh 30vh;">
     <div class="main-container">
         <h2 id="title">CONTROLS</h2>
         <div id="controls-content">
-            <p>Player 1</p>
-            <p>Player 2</p>
+            <p class="control_player-text">Player 1</p>
+            <div class="control_control-details" >
+            <img src="./assets/player1/player1-controls.png" alt="" id="player-1-controls">
+            </div>
+            <p class="control_player-text">Player 2</p>
+            <div class="control_control-details" >
+                <img src="./assets/player2/player2-controls.png" alt="" id="player-2-controls">
+            </div>
         </div>
         <p id="click-text">Click Anywhere to Continue</p>
     </div>
-    <div id="skip-button">
+    <!-- <div id="skip-button">
         <p id="skip">Skip to Game  >></p>
-    </div>
+    </div> -->
 
     <script src="./src/instructions.js"></script>
 </body>
