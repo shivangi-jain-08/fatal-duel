@@ -7,16 +7,20 @@ var scorePlayer2 = 0;
 localStorage.setItem("player1Score", scorePlayer1)
 localStorage.setItem("player2Score", scorePlayer2)
 
+//declaring audio variables
 var player1AttackAudio = new Audio("../assets/player1/player1-attack-audio.wav")
 var player2AttackAudio = new Audio("../assets/player2/player2-attack-audio.wav")
 
+//setting canvas width and height
 canvas.width = 1024
 canvas.height = 576
 
 c.fillRect(0, 0, canvas.width, canvas.height);
 
+//using variable gravity to make objects on screen fall
 const gravity = 0.7;
 
+//adding background as a sprite object
 const background = new Sprite({
     position: {
         x: 0,
@@ -25,22 +29,24 @@ const background = new Sprite({
     imageSrc: "../assets/bg-canvas.png"
 })
 
-const chimney = new Sprite({
-    position: {
-        x: 670,
-        y: 198
-    },
-    imageSrc: "../assets/chimney.png",
-    scale: 1.25,
-    framesMax: 6
-})
+// const chimney = new Sprite({
+//     position: {
+//         x: 670,
+//         y: 198
+//     },
+//     imageSrc: "../assets/chimney.png",
+//     scale: 1.25,
+//     framesMax: 6
+// })
 
-
+//adding player 1 as a fighter
 const player1 = new Fighter({
+    //setting position for the player
     position: {
         x: 0,
         y: 0
     },
+    //setting initial velocity of player1 
     velocity: {
         x: 0,
         y: 10
@@ -49,9 +55,13 @@ const player1 = new Fighter({
         x: 0,
         y: 0
     },
+    //adding sprite image of player in idle state
     imageSrc: '../assets/player1/player1-idle.png',
+    //setting scale of the image
     scale: 3.75,
+    //setting number of frames in the image
     framesMax: 4,
+    //adding image sprites for different states of the player
     sprites: {
         idle: {
         imageSrc: '../assets/player1/player1-idle.png',
@@ -84,6 +94,7 @@ const player1 = new Fighter({
         }
         
         },
+        //setting details of the attackbox of the player
         attackBox: {
             offset: {
                 x: 30,
@@ -104,7 +115,7 @@ const player2 = new Fighter({
         x: 0,
         y: 0
     },
-    color: 'blue',
+    // color: 'blue',
     offset:{
         x: -50,
         y: 0
@@ -154,6 +165,7 @@ const player2 = new Fighter({
 
 })
 
+//adding different keys as objects for controls of players 
 const keys = {
     a: {
         pressed: false
@@ -169,6 +181,7 @@ const keys = {
     }
 }
 
+//creating a function to check whether or not there is collision of attack box
 function rectangularCollision({rectangle1, rectangle2}){
     return(
         rectangle1.attackBox.position.x + rectangle1.attackBox.width >=rectangle2.position.x &&
@@ -177,6 +190,7 @@ function rectangularCollision({rectangle1, rectangle2}){
         rectangle1.attackBox.position.y <= rectangle2.position.y + rectangle2.height)
 }
 
+//creating the timer
 let time = 60;
 var timer = setInterval(function () {
     time--;
@@ -187,6 +201,7 @@ var timer = setInterval(function () {
     }
 }, 1000);
 
+//creating a function so that players move
 function animate(){
     window.requestAnimationFrame(animate);
     c.fillStyle = 'black';
@@ -200,8 +215,6 @@ function animate(){
     player2.velocity.x = 0
 
     //player1 movement
-    
-
     if(keys.a.pressed && player1.lastKey==='a'){
         player1.velocity.x = -5
         player1.switchSprite('run')
@@ -218,8 +231,8 @@ function animate(){
         player1.switchSprite('fall')
     }
 
+
     //player2 movement
-    
     if(keys.ArrowRight.pressed && player2.lastKey==='ArrowRight'){
         player2.velocity.x = 5
         player2.switchSprite('run')
@@ -273,6 +286,7 @@ function animate(){
 
 animate()
 
+//adding event listeners for different controls
 window.addEventListener('keydown', (event)=>{
     if(event.key=='d'){
         keys.d.pressed = true
@@ -323,6 +337,7 @@ window.addEventListener('keyup', (event)=>{
     }
 })
 
+//redirecting to next page incase a player dies
 if(player1.dead){
     location.href = "./result.html"
 }else if(player2.dead){
