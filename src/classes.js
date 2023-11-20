@@ -104,6 +104,7 @@ class Fighter extends Sprite{
         this.position.x += this.velocity.x
         this.position.y += this.velocity.y
 
+        //adding gravity if player is not on ground
         if (this.position.y + this.height + this.velocity.y>= canvas.height-90){
             this.velocity.y = 0;
         }else{
