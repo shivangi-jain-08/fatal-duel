@@ -2,6 +2,8 @@
 
 This is a 1 vs 1 fighting game. The inspiration for the game is taken from a popular game by the name of Shadow Fighters. This is a story based game.
 
+## [🔗 Deployed Link](https://fatal-duel.netlify.app/)
+
 
 
 ## Story
