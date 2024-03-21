@@ -10,7 +10,7 @@ class Sprite{
         this.framesMax = framesMax
         this.frameCurrent = 0
         this.framesElapsed = 0
-        this.framesHold = 5
+        this.framesHold = 10
     }
 
     draw(){
